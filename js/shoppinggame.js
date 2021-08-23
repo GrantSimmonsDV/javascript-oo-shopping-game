@@ -1,12 +1,35 @@
 let gameComplete = false;
 // Define the three constants here
+const name = 'unknown';
+const score = 0;
+const items = 0;
 
 // Define the player object here
+let player = {
+    name, 
+    score,
+    items,
+    getCurrentScore() {return score;},
+    addPoints(points) {points += points;},
+    deductPoints(points) {points -= points;}
+    
 
+}
 // Define the Product class - write the Constructor function for Product class here
+function Product( id, name, price, expiryDate){
+    this.id =  id;
+    this.name = name;
+    this.price = price;
+    this.expiryDate = expiryDate; 
+}
+
 
 // Complete the dateDiff function
-const dateDiff = (date1, date2) => {};
+const dateDiff = (date1, date2) => {
+    let days = date1 - date2;
+    return days;
+
+};
 
 // Here, use Object.defineProperty to create property - daysToExpire
 
@@ -305,6 +328,8 @@ function init(data) {
         console.log(`Congratulations!!! You became ${finalStatus}!`.blue);
         rateAndExit();
     };
+
+//ONCE LAST MODULE IS COMPLETED  v v v v v 
 
     // Uncomment this function once you fully implement the game to be able to run it
     // (function setGameCompleteFlag(){
