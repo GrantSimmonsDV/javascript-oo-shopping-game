@@ -9,9 +9,9 @@ let player = {
     name, 
     score,
     items,
-    getCurrentScore() {return score;},
-    addPoints(points) {points += points;},
-    deductPoints(points) {points -= points;}
+    getCurrentScore() {return this.score;},
+    addPoints(points) {this.score += points;},
+    deductPoints(points) {this.score -= points;}
     
 
 }
