@@ -35,7 +35,7 @@ const dateDiff = (date1, date2) => {
 Object.defineProperty(Product.prototype, 'daysToExpire', {
     get: function() {
         
-        return dateDiff(this.expiryDate, newDate());
+        return dateDiff(this.expiryDate, new Date());
     }  
 });
 
@@ -59,18 +59,18 @@ Object.create(Product.prototype)
 
 // Define Rating class here
 class Rating {
-    constructor(rate) {
+    constructor() {
        this.rate = ""; 
     }
     set rating(value) {
         if(value > 1 && value <= 4){
-            return rate = "OK";
+            this.rate = "OK";
         } else if (value >= 5 && value <= 7){
-            return rate = "GOOD";
+            this.rate = "GOOD";
         } else if (value > 7){
-            return rate = "EXCEPTIONAL"
+            this.rate = "EXCEPTIONAL"
         } else {
-            return rate = "BAD"
+            this.rate = "BAD"
         }
     }
 }
