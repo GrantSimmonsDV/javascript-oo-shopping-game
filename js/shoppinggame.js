@@ -44,7 +44,7 @@ Object.defineProperty(Product.prototype, 'daysToExpire', {
 Product.prototype.getDetails = function () {
     return `Product Name: ${this.name},
 Product Price: ${this.price}`;
-})
+}
 // Define the MagicProduct class here
 function MagicProduct( id, name, price, expiryDate, points, isBonus){
     Product.call(this, id, name, price, expiryDate)
@@ -53,10 +53,29 @@ function MagicProduct( id, name, price, expiryDate, points, isBonus){
 }
 
 // Establish inheritance between Product() & MagicProduct() here
+MagicProduct.prototype = 
 Object.create(Product.prototype)
 
 
 // Define Rating class here
+class Rating {
+    constructor(rate) {
+       this.rate = ""; 
+    }
+    set rating(value) {
+        if(value > 1 && value <= 4){
+            return rate = "OK";
+        } else if (value >= 5 && value <= 7){
+            return rate = "GOOD";
+        } else if (value > 7){
+            return rate = "EXCEPTIONAL"
+        } else {
+            return rate = "BAD"
+        }
+    }
+}
+
+
 
 // Complete the loadProducts function
 const loadProducts = (map, prodId) => {
