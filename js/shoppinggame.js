@@ -44,7 +44,6 @@ Object.defineProperty(Product.prototype, 'daysToExpire', {
 //     return `Product Name: ${this.name} ,
 // Product Price: ${this.price}`;
 // }
-
 Product.prototype.getDetails = function () {
     return `Product Name: ${this.name} , Product Price: ${this.price}`;
 }
@@ -86,6 +85,7 @@ const loadProducts = (map, prodId) => {
     try {
         // Call Object.keys() to load the property names of the Product object in to prodKeys array here
         let prodKeys = [];
+        let prodKeys = Object.keys(Product);
 
         let iterator_obj = map.entries();
 
