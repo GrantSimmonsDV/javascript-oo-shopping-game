@@ -21,17 +21,24 @@ function Product( id, name, price, expiryDate){
     this.name = name;
     this.price = price;
     this.expiryDate = expiryDate; 
+    
 }
 
 
 // Complete the dateDiff function
 const dateDiff = (date1, date2) => {
-    let days = date1 - date2;
-    return days;
-
+    let daysBtwn = Math.abs(date1.getTime() - date2.getTime());
+    return daysBtwn;
 };
 
 // Here, use Object.defineProperty to create property - daysToExpire
+Object.defineProperty(Product.prototype, 'daysToExpire', {
+    get: function() {
+        return daysBtwn;
+    }
+    
+})
+
 
 // Add method getDetails to Product here
 
